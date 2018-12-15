@@ -371,23 +371,22 @@ function stageTooSmallHandler(){
     var score;
     var fontProperties = new Sakri.CanvasTextProperties(Sakri.CanvasTextProperties.BOLD, null, 100);
 
-    var word = "SAKRI";
+    var word = "哈哈皮";
 
     function startDemo(){
         canvas.addEventListener('touchstart', handleUserTap, false);
         canvas.addEventListener('mousedown', handleUserTap, false);
 
-        var logoText = "FLAPPY TEXT";
         if(!logoCanvas){
             logoCanvas = document.createElement("canvas");
             logoCanvasBG = document.createElement("canvas");
         }
-        createLogo("FLAPPY TEXT", logoCanvas, logoCanvasBG);
+        createLogo("HAPPY FLAPPY", logoCanvas, logoCanvasBG);
         if(!gameOverCanvas){
             gameOverCanvas = document.createElement("canvas");
             gameOverCanvasBG = document.createElement("canvas");
         }
-        createLogo("GAME OVER", gameOverCanvas, gameOverCanvasBG);
+        createLogo(" GAME  OVER ", gameOverCanvas, gameOverCanvasBG);
 
         createGroundPattern();
         createBird();
@@ -470,7 +469,7 @@ function stageTooSmallHandler(){
     function renderGameOver(){
 
         //game over logo
-        context.drawImage(gameOverCanvas, bounds.getCenterX() - logoCanvas.width/2, canvas.height *.2);
+        context.drawImage(gameOverCanvas, bounds.getCenterX() - gameOverCanvas.width/2, canvas.height *.2);
 
         var instruction = "Click or tap to flap again.";
         context.font = "bold normal 24px sans-serif";
@@ -522,7 +521,7 @@ function stageTooSmallHandler(){
     var logoMaxY;
     var logoDirection;
 
-    function createLogo(logoText, logoCanvas, logoCanvassBG){
+    function createLogo(logoText, logoCanvas, logoCanvasBG){
         logoCanvas.width = logoCanvasBG.width = canvas.width;
         logoCanvas.height = logoCanvasBG.height = canvas.height / 4;
         logoCurrentY = logoY = canvas.height * .25;
