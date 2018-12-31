@@ -386,7 +386,7 @@ function stageTooSmallHandler(){
             gameOverCanvas = document.createElement("canvas");
             gameOverCanvasBG = document.createElement("canvas");
         }
-        createLogo(" GAME  OVER ", gameOverCanvas, gameOverCanvasBG);
+        createLogo("Happy New Year", gameOverCanvas, gameOverCanvasBG);
 
         createGroundPattern();
         createBird();
